@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BPK · DJ &amp; Producer · Electronic Press Kit</title>
+<meta name="description" content="Electronic press kit for BPK (Brian Pokora), an Edinburgh-based DJ and electronic music producer. Also one half of Both Hands (Lost Map Records).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    HOW TO EDIT
+    - Anything wrapped in <span class="ph"> is a placeholder. Replace it, then delete the span.
+    - Photos: files live in /images (taken from the Mixcloud mix covers). Swap any file, keeping the name.
+      Tiles with no image show an empty "drop photo" slot instead of a broken icon.
+  */
+  :root{
+    --bg: #0c0b10;
+    --bg-2: #14121b;
+    --ink: #f2efe8;
+    --dim: #a9a6b5;
+    --acid: #c8ff3e;
+    --hot: #ff3d8b;
+    --violet: #7a5cff;
+    --line: rgba(242,239,232,0.14);
+    --radius: 2px;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 800px 520px at 90% -8%, rgba(122,92,255,0.22), transparent 60%),
+      radial-gradient(ellipse 700px 460px at -5% 12%, rgba(255,61,139,0.14), transparent 55%);
+    background-repeat:no-repeat;
+    color: var(--ink);
+    font-family:'Space Grotesk', system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a{ color:inherit; }
+  .mono{ font-family:'Space Mono', ui-monospace, monospace; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
+
+  /* placeholders: loud on purpose so none ship by accident */
+  .ph{
+    background: rgba(200,255,62,0.12);
+    outline: 1px dashed rgba(200,255,62,0.6);
+    outline-offset: 2px;
+    border-radius: 2px;
+    color: var(--acid);
+  }
+
+  /* ---- Nav ---- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background: rgba(12,11,16,0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1040px; margin:0 auto; }
+  .nav-mark{ font-weight:700; font-size:0.95rem; letter-spacing:0.14em; text-transform:uppercase; }
+  .nav-mark i{ font-style:normal; color:var(--acid); }
+  .nav-links{ display:flex; gap:26px; font-size:0.86rem; }
+  .nav-links a{ text-decoration:none; color:var(--dim); transition:color .15s ease; }
+  .nav-links a:hover{ color:var(--acid); }
+  @media (max-width:640px){ .nav-links{ display:none; } }
+
+  /* ---- Hero ---- */
+  .hero{ position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; border-bottom:1px solid var(--line); }
+  .hero-art{ position:absolute; inset:0; opacity:0.9; }
+  .hero-art svg{ position:absolute; right:-40px; top:50%; transform:translateY(-58%); width:min(780px, 96vw); height:auto; }
+  .hero-art::after{
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(12,11,16,0) 30%, rgba(12,11,16,0.92) 100%);
+  }
+  .cell{ fill: rgba(242,239,232,0.07); }
+  .cell.on{ fill: var(--violet); }
+  .cell.on.hot{ fill: var(--hot); }
+  .cell.on.acid{ fill: var(--acid); }
+  .playhead{ fill: rgba(200,255,62,0.16); animation: sweep 4s steps(16) infinite; }
+  @keyframes sweep{ from{ transform:translateX(0); } to{ transform:translateX(640px); } }
+  @media (prefers-reduced-motion: reduce){ .playhead{ animation:none; } }
+
+  .hero-inner{ position:relative; z-index:2; padding:80px 28px 56px; width:100%; }
+  .kicker{ font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--acid); margin:0 0 18px; }
+  h1.title{
+    font-weight:700;
+    font-size:clamp(5rem, 22vw, 12rem);
+    line-height:0.86;
+    letter-spacing:-0.03em;
+    text-transform:uppercase;
+    margin:0 0 22px;
+  }
+  h1.title span{ display:block; }
+  h1.title span + span{ -webkit-text-stroke:1.5px var(--ink); color:transparent; }
+  .hero-sub{ max-width:540px; font-size:1.08rem; color:var(--dim); margin:0 0 28px; }
+  .hero-meta{ display:flex; flex-wrap:wrap; gap:10px 28px; font-size:0.84rem; color:var(--dim); }
+  .hero-meta b{ color:var(--ink); font-weight:600; }
+
+  /* ---- Section shell ---- */
+  section{ padding:84px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  .eyebrow{ font-family:'Space Mono', monospace; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--hot); margin:0 0 10px; }
+  h2.sec-title{ font-weight:600; font-size:clamp(1.8rem, 3.6vw, 2.6rem); letter-spacing:-0.02em; line-height:1.1; margin:0 0 36px; max-width:680px; }
+
+  /* ---- Bio ---- */
+  .bio-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:start; }
+  .bio-grid p{ font-size:1.05rem; color:var(--dim); max-width:60ch; margin:0; }
+  .bio-grid p + p{ margin-top:18px; }
+  .bio-grid em{ color:var(--ink); }
+  .fact-list{ display:flex; flex-direction:column; gap:18px; border-top:1px solid var(--line); padding-top:18px; }
+  .fact{ display:flex; justify-content:space-between; gap:18px; font-size:0.92rem; border-bottom:1px solid var(--line); padding-bottom:18px; }
+  .fact:last-child{ border-bottom:none; padding-bottom:0; }
+  .fact-label{ color:var(--dim); }
+  .fact-value{ text-align:right; max-width:60%; }
+  @media (max-width:800px){
+    .bio-grid{ grid-template-columns:1fr; gap:36px; }
+    .fact{ flex-direction:column; gap:4px; }
+    .fact-value{ text-align:left; max-width:100%; }
+  }
+
+  /* ---- What I do ---- */
+  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .card{ border:1px solid var(--line); border-radius:var(--radius); padding:28px; background:var(--bg-2); }
+  .card .num{ font-family:'Space Mono', monospace; font-size:0.78rem; color:var(--acid); }
+  .card h3{ font-size:1.25rem; font-weight:600; margin:10px 0 10px; letter-spacing:-0.01em; }
+  .card p{ margin:0; color:var(--dim); font-size:0.95rem; }
+  @media (max-width:800px){ .cards{ grid-template-columns:1fr; } }
+
+  /* ---- Tracks ---- */
+  .tracks{ display:flex; flex-direction:column; }
+  .track{ padding:26px 0; border-top:1px solid var(--line); }
+  .tracks .track:last-child{ border-bottom:1px solid var(--line); }
+  .track-top{ display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .track-name{ font-size:1.5rem; font-weight:600; letter-spacing:-0.01em; }
+  .track-tag{ display:block; font-family:'Space Mono', monospace; font-size:0.74rem; color:var(--acid); margin-top:4px; }
+  .track-note{ font-size:0.92rem; color:var(--dim); max-width:64ch; margin:12px 0 0; }
+  .track-link{
+    font-size:0.86rem; text-decoration:none; color:var(--bg);
+    background:var(--ink); padding:9px 18px; border-radius:999px;
+    white-space:nowrap; flex-shrink:0; transition:background .15s ease;
+  }
+  .track-link:hover{ background:var(--acid); }
+  .btn-row{ margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--acid); color:var(--bg); text-decoration:none;
+    padding:13px 24px; border-radius:999px; font-size:0.92rem; font-weight:600;
+    white-space:nowrap; transition:transform .15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn.ghost{ background:transparent; border:1px solid var(--line); color:var(--ink); }
+  .btn.ghost:hover{ border-color:var(--acid); }
+
+  /* ---- Mixes ---- */
+  .mix-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .mix{ display:block; text-decoration:none; border:1px solid var(--line); border-radius:var(--radius); padding:24px; background:var(--bg-2); transition:border-color .15s ease; }
+  .mix:hover{ border-color:var(--acid); }
+  .mix-bars{ display:flex; align-items:flex-end; gap:3px; height:44px; margin-bottom:18px; }
+  .mix-bars i{ flex:1; background:var(--violet); border-radius:1px; opacity:0.85; }
+  .mix:nth-child(2) .mix-bars i{ background:var(--hot); }
+  .mix-title{ font-weight:600; font-size:1.1rem; }
+  .mix-sub{ font-size:0.82rem; color:var(--dim); margin-top:2px; }
+  @media (max-width:700px){ .mix-grid{ grid-template-columns:1fr; } }
+
+  /* ---- Gallery ---- */
+  .gallery{ display:grid; grid-template-columns:repeat(6,1fr); gap:10px; }
+  .tile{ position:relative; overflow:hidden; background:var(--bg-2); border:1px solid var(--line); }
+  .tile img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .tile.empty img{ display:none; }
+  .tile.empty::after{
+    content:attr(data-file); position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    padding:12px; text-align:center; font-family:'Space Mono', monospace; font-size:0.72rem; color:var(--acid);
+    background: repeating-linear-gradient(45deg, rgba(200,255,62,0.05) 0 10px, transparent 10px 20px);
+  }
+  .g1{ grid-column:span 4; grid-row:span 2; aspect-ratio:4/3; }
+  .g2{ grid-column:span 2; grid-row:span 2; aspect-ratio:3/4; }
+  .g3{ grid-column:span 2; aspect-ratio:3/4; }
+  .g4{ grid-column:span 2; aspect-ratio:3/4; }
+  .g5{ grid-column:span 2; aspect-ratio:3/4; }
+  @media (max-width:760px){
+    .gallery{ grid-template-columns:repeat(2,1fr); }
+    .g1,.g2,.g3,.g4,.g5{ grid-column:span 1; grid-row:auto; aspect-ratio:4/3; }
+    .g1{ grid-column:span 2; }
+  }
+
+  /* ---- Video ---- */
+  .video-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .video-card{ display:block; text-decoration:none; }
+  .video-thumb{ position:relative; aspect-ratio:16/9; border-radius:var(--radius); overflow:hidden; background:var(--bg-2); border:1px solid var(--line); }
+  .video-thumb img{ width:100%; height:100%; object-fit:cover; opacity:0.85; transition:opacity .15s ease, transform .3s ease; }
+  .video-card:hover .video-thumb img{ opacity:1; transform:scale(1.03); }
+  .play-dot{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+  .play-dot span{ width:52px; height:52px; border-radius:50%; background:rgba(200,255,62,0.95); display:flex; align-items:center; justify-content:center; }
+  .play-dot svg{ margin-left:3px; }
+  .video-title{ margin-top:12px; font-size:0.95rem; }
+  .video-sub{ font-size:0.8rem; color:var(--dim); margin-top:2px; }
+  @media (max-width:760px){ .video-grid{ grid-template-columns:1fr; } }
+
+  /* ---- Press ---- */
+  .press-item{ padding:30px 0; border-top:1px solid var(--line); }
+  .press-list .press-item:last-child{ border-bottom:1px solid var(--line); }
+  .press-quote{ font-weight:500; font-size:clamp(1.15rem, 2.2vw, 1.5rem); letter-spacing:-0.01em; line-height:1.35; max-width:760px; margin:0 0 14px; }
+  .press-source{ font-size:0.86rem; color:var(--dim); display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .press-source a{ color:var(--acid); text-decoration:none; }
+  .press-source a:hover{ text-decoration:underline; }
+
+  /* ---- Booking ---- */
+  .book-box{ border:1px solid var(--line); border-radius:var(--radius); padding:40px; display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; background:rgba(242,239,232,0.03); }
+  .book-box p{ margin:0; color:var(--dim); max-width:48ch; }
+  .book-box ul{ margin:16px 0 0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:8px; }
+  .book-box li{ font-family:'Space Mono', monospace; font-size:0.74rem; border:1px solid var(--line); padding:4px 10px; border-radius:999px; color:var(--ink); }
+  @media (max-width:720px){ .book-box{ grid-template-columns:1fr; padding:28px; } }
+
+  /* ---- Contact / Footer ---- */
+  footer{ padding:70px 0 56px; }
+  .contact-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:end; }
+  .contact-name{ font-weight:700; text-transform:uppercase; letter-spacing:-0.02em; font-size:clamp(2rem,5vw,3rem); line-height:1; margin:0 0 18px; }
+  .contact-email{ font-size:1.15rem; margin:0; }
+  .contact-email a{ color:var(--acid); text-decoration:none; border-bottom:1px solid rgba(200,255,62,0.4); }
+  .social-list{ display:flex; flex-direction:column; gap:10px; align-items:flex-start; }
+  .social-list a{ text-decoration:none; color:var(--dim); font-size:0.95rem; border-bottom:1px solid var(--line); padding-bottom:3px; }
+  .social-list a:hover{ color:var(--acid); border-color:var(--acid); }
+  .foot-bottom{ margin-top:60px; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.78rem; color:var(--dim); }
+  @media (max-width:720px){ .contact-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="nav">
+    <div class="nav-mark">BPK <i>/</i> EPK</div>
+    <div class="nav-links">
+      <a href="#bio">Bio</a>
+      <a href="#music">Music</a>
+      <a href="#mixes">Mixes</a>
+      <a href="#photos">Photos</a>
+      <a href="#video">Video</a>
+      <a href="#press">Press</a>
+      <a href="#booking">Booking</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero" style="padding:0;">
+  <div class="hero-art" aria-hidden="true">
+    <!-- 16-step sequencer: purely decorative -->
+    <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg">
+      <g id="grid"></g>
+      <rect class="playhead" x="0" y="0" width="36" height="320"/>
+    </svg>
+  </div>
+  <div class="hero-inner wrap">
+    <p class="kicker">Brian Pokora · DJ &amp; Producer · Edinburgh, Scotland</p>
+    <h1 class="title"><span>BPK</span></h1>
+    <p class="hero-sub">Left-field disco, psychedelic house, alternative pop and melodic electronica. Warm, playful, hypnotic, and a little unexpected, on the decks and live.</p>
+    <div class="hero-meta">
+      <span><b>Based in:</b> Edinburgh</span>
+      <span><b>Formats:</b> DJ sets, live electronic sets</span>
+      <span><b>Booking:</b> brian.pokora@gmail.com</span>
+    </div>
+  </div>
+</section>
+
+<section id="bio" class="wrap">
+  <p class="eyebrow">Biography</p>
+  <h2 class="sec-title">Groove-led, curious, and hard to pin down.</h2>
+  <div class="bio-grid">
+    <div>
+      <p>BPK is an Edinburgh-based DJ and electronic music producer exploring the space between left-field disco, psychedelic house, alternative pop and forward-thinking club music. His music moves between warm, playful grooves, hypnotic rhythms, melodic electronica and unexpected edits, balancing dancefloor energy with a curiosity for the unusual.</p>
+      <p>Alongside DJ sets, BPK performs live electronic sets built around original music, synthesizers and drum machines.</p>
+      <p>As Brian Pokora, he is also one half of the synth-pop duo <em>Both Hands</em> with Hailey Beavis. Their debut album, <em>Be Like a Mountain In a Moonlit Way</em>, came out on Lost Map Records on 18 September 2026, and The Skinny singled out Pokora's "dreamy and effervescent dance tracks."</p>
+    </div>
+    <div class="fact-list">
+      <div class="fact"><span class="fact-label">Artist</span><span class="fact-value">BPK (Brian Pokora)</span></div>
+      <div class="fact"><span class="fact-label">Roles</span><span class="fact-value">DJ, electronic music producer</span></div>
+      <div class="fact"><span class="fact-label">Based in</span><span class="fact-value">Edinburgh, Scotland</span></div>
+      <div class="fact"><span class="fact-label">Sound</span><span class="fact-value">Left-field disco, psychedelic house, alternative pop, melodic electronica</span></div>
+      <div class="fact"><span class="fact-label">Live</span><span class="fact-value">Synthesizers and drum machines, original music</span></div>
+      <div class="fact"><span class="fact-label">Also</span><span class="fact-value">Both Hands, Lost Map Records</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="what" class="wrap">
+  <p class="eyebrow">What I do</p>
+  <h2 class="sec-title">Three ways to work together.</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="num">01</span>
+      <h3>DJ sets</h3>
+      <p>Disco, house and left-field club music with warm grooves, hypnotic rhythms and the occasional unexpected edit.</p>
+    </div>
+    <div class="card">
+      <span class="num">02</span>
+      <h3>Live electronic</h3>
+      <p>Original music performed on synthesizers and drum machines, from melodic electronica to dancefloor grooves.</p>
+    </div>
+    <div class="card">
+      <span class="num">03</span>
+      <h3>Production</h3>
+      <p>Writing and producing electronic music, from first sketch to finished record.</p>
+    </div>
+  </div>
+</section>
+
+<section id="music" class="wrap">
+  <p class="eyebrow">Music</p>
+  <h2 class="sec-title">Selected productions</h2>
+  <div class="tracks">
+    <div class="track">
+      <div class="track-top">
+        <div>
+          <span class="track-name">Ladder</span>
+          <span class="track-tag">Both Hands · Lost Map Records</span>
+        </div>
+        <a class="track-link" href="https://www.youtube.com/watch?v=AU6e1NykQRo" target="_blank" rel="noopener">Watch ↗</a>
+      </div>
+      <p class="track-note">Arpeggio-driven synth-pop from the debut album, and the only six seconds of Brian singing on the record.</p>
+    </div>
+    <div class="track">
+      <div class="track-top">
+        <div>
+          <span class="track-name">Lips Parted</span>
+          <span class="track-tag">Both Hands · Lost Map Records</span>
+        </div>
+        <a class="track-link" href="https://www.youtube.com/watch?v=22n0yBsveCA" target="_blank" rel="noopener">Watch ↗</a>
+      </div>
+      <p class="track-note">Pulsing, playful and built for the dancefloor.</p>
+    </div>
+    <div class="track">
+      <div class="track-top">
+        <div>
+          <span class="track-name">Sea Spray</span>
+          <span class="track-tag">Both Hands · Lost Map Records</span>
+        </div>
+        <a class="track-link" href="https://www.youtube.com/watch?v=llLbBN_MdKs" target="_blank" rel="noopener">Watch ↗</a>
+      </div>
+      <p class="track-note">Trying to outrun the dawn: a night-long, close-to-the-ones-you-love kind of track.</p>
+    </div>
+  </div>
+  <div class="btn-row">
+    <a class="btn" href="https://brianpokora.bandcamp.com/" target="_blank" rel="noopener">Brian Pokora on Bandcamp</a>
+    <a class="btn ghost" href="https://open.spotify.com/artist/3flW9Wdr8HajNi1zIRjQCW" target="_blank" rel="noopener">Both Hands on Spotify</a>
+    <a class="btn ghost" href="https://li.sten.to/bothhands-blamiamw" target="_blank" rel="noopener">Full album, all platforms</a>
+  </div>
+</section>
+
+<section id="mixes" class="wrap">
+  <p class="eyebrow">DJ mixes</p>
+  <h2 class="sec-title">Press play on a set.</h2>
+  <div class="mix-grid">
+    <a class="mix" href="https://www.mixcloud.com/brianpokora/" target="_blank" rel="noopener">
+      <div class="mix-bars" aria-hidden="true"></div>
+      <div class="mix-title">DJ mixes on Mixcloud ↗</div>
+      <div class="mix-sub">mixcloud.com/brianpokora</div>
+    </a>
+    <a class="mix" href="https://soundcloud.com/brian-pokora" target="_blank" rel="noopener">
+      <div class="mix-bars" aria-hidden="true"></div>
+      <div class="mix-title">Sets and tracks on SoundCloud ↗</div>
+      <div class="mix-sub">soundcloud.com/brian-pokora</div>
+    </a>
+  </div>
+</section>
+
+<section id="photos" class="wrap">
+  <p class="eyebrow">Photos</p>
+  <h2 class="sec-title">Press images</h2>
+  <div class="gallery">
+    <div class="tile g1" data-file="images/dj-live.jpg"><img src="images/dj-live.jpg" alt="BPK performing live with synthesizers, a drum machine and a laptop" onerror="this.parentNode.classList.add('empty')"></div>
+    <div class="tile g2" data-file="images/portrait-bw.jpg"><img src="images/portrait-bw.jpg" alt="Black and white portrait of Brian Pokora smiling" onerror="this.parentNode.classList.add('empty')"></div>
+    <div class="tile g3" data-file="images/festival.jpg"><img src="images/festival.jpg" alt="Brian Pokora at a festival, blowing bubbles in front of the main stage" onerror="this.parentNode.classList.add('empty')"></div>
+    <div class="tile g4" data-file="images/portrait.jpg"><img src="images/portrait.jpg" alt="Portrait of Brian Pokora in a blue jacket and cap" onerror="this.parentNode.classList.add('empty')"></div>
+    <div class="tile g5" data-file="images/outdoors.jpg"><img src="images/outdoors.jpg" alt="Brian Pokora standing on a stone bridge in an autumn forest" onerror="this.parentNode.classList.add('empty')"></div>
+  </div>
+</section>
+
+<section id="video" class="wrap">
+  <p class="eyebrow">Video</p>
+  <h2 class="sec-title">Official videos</h2>
+  <div class="video-grid">
+    <a class="video-card" href="https://www.youtube.com/watch?v=22n0yBsveCA" target="_blank" rel="noopener">
+      <div class="video-thumb">
+        <img src="https://img.youtube.com/vi/22n0yBsveCA/hqdefault.jpg" alt="Lips Parted video thumbnail">
+        <div class="play-dot"><span><svg width="16" height="16" viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15" fill="#0c0b10"/></svg></span></div>
+      </div>
+      <div class="video-title">Lips Parted</div>
+      <div class="video-sub">Both Hands · Official Video</div>
+    </a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=AU6e1NykQRo" target="_blank" rel="noopener">
+      <div class="video-thumb">
+        <img src="https://img.youtube.com/vi/AU6e1NykQRo/hqdefault.jpg" alt="Ladder video thumbnail">
+        <div class="play-dot"><span><svg width="16" height="16" viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15" fill="#0c0b10"/></svg></span></div>
+      </div>
+      <div class="video-title">Ladder</div>
+      <div class="video-sub">Both Hands · Official Video</div>
+    </a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=llLbBN_MdKs" target="_blank" rel="noopener">
+      <div class="video-thumb">
+        <img src="https://img.youtube.com/vi/llLbBN_MdKs/hqdefault.jpg" alt="Sea Spray video thumbnail">
+        <div class="play-dot"><span><svg width="16" height="16" viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15" fill="#0c0b10"/></svg></span></div>
+      </div>
+      <div class="video-title">Sea Spray</div>
+      <div class="video-sub">Both Hands · Official Video</div>
+    </a>
+  </div>
+</section>
+
+<section id="press" class="wrap">
+  <p class="eyebrow">Press</p>
+  <h2 class="sec-title">What people are saying</h2>
+  <div class="press-list">
+    <div class="press-item">
+      <p class="press-quote">"Pokora's dreamy and effervescent dance tracks, with Beavis' confessional lyricism and vocal performance, is a match made in heaven."</p>
+      <div class="press-source">
+        <span>The Skinny, Spotlight On...</span>
+        <span>·</span>
+        <a href="https://www.theskinny.co.uk/music/interviews/spotlight-on-both-hands" target="_blank" rel="noopener">Read the interview ↗</a>
+      </div>
+    </div>
+    <div class="press-item">
+      <p class="press-quote">"Edinburgh synth pop duo Both Hands crash the summer party with a lyrical, hopeful album... Both Hands are ready to set September on fire."</p>
+      <div class="press-source">
+        <span>The Skinny, Album Review (★★★★)</span>
+        <span>·</span>
+        <a href="https://www.theskinny.co.uk/music/reviews/albums/both-hands-be-like-a-mountain-in-a-moonlit-way" target="_blank" rel="noopener">Read the review ↗</a>
+      </div>
+    </div>
+    <div class="press-item">
+      <p class="press-quote">"A sound which is both original but nevertheless boasts an undefinable familiarity."</p>
+      <div class="press-source">
+        <span>The Scotsman, Under the Radar</span>
+        <span>·</span>
+        <a href="https://www.scotsman.com/whats-on/arts-and-entertainment/under-the-radar-both-hands-8749374" target="_blank" rel="noopener">Read the feature ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="wrap">
+  <p class="eyebrow">Booking</p>
+  <h2 class="sec-title">Book a set or start a project.</h2>
+  <div class="book-box">
+    <div>
+      <p>DJ sets, live electronic sets and production enquiries all go to the same inbox. Include the date, location, and what you have in mind.</p>
+      <ul>
+        <li>DJ sets</li>
+        <li>Live electronic</li>
+        <li>Club nights</li>
+        <li>Festivals</li>
+        <li>Production</li>
+      </ul>
+    </div>
+    <a class="btn" href="mailto:brian.pokora@gmail.com"><span>Email BPK</span></a>
+  </div>
+</section>
+
+<footer id="contact" class="wrap">
+  <p class="eyebrow">Get in touch</p>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-name">Let's make<br>something.</p>
+      <p class="contact-email">Booking &amp; press: <a href="mailto:brian.pokora@gmail.com">brian.pokora@gmail.com</a></p>
+    </div>
+    <div class="social-list">
+      <a href="https://www.instagram.com/brianpokora" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://soundcloud.com/brian-pokora" target="_blank" rel="noopener">SoundCloud</a>
+      <a href="https://www.mixcloud.com/brianpokora/" target="_blank" rel="noopener">Mixcloud</a>
+      <a href="https://brianpokora.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
+      <a href="https://open.spotify.com/artist/3flW9Wdr8HajNi1zIRjQCW" target="_blank" rel="noopener">Both Hands on Spotify</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>BPK, Electronic Press Kit</span>
+    <span>DJ · Producer · Edinburgh</span>
+  </div>
+</footer>
+
+<script>
+  // Decorative sequencer grid (16 steps x 8 rows) in the hero.
+  (function(){
+    var g = document.getElementById('grid');
+    if(!g) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    var pattern = [
+      [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      [0,0,0,0, 0,0,0,1, 0,0,0,0, 0,0,0,0],
+      [0,0,1,0, 0,0,0,0, 0,0,1,0, 0,0,1,0],
+      [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0],
+      [0,0,0,1, 0,0,0,0, 0,1,0,0, 0,0,0,0],
+      [0,1,0,0, 0,1,0,0, 0,0,0,1, 0,1,0,0],
+      [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
+      [1,0,0,0, 0,0,1,0, 0,0,0,0, 0,0,1,0]
+    ];
+    var size = 36, gap = 4, rowClass = ['', '', 'hot', 'acid', '', 'hot', 'acid', ''];
+    for(var r=0; r<8; r++){
+      for(var c=0; c<16; c++){
+        var rect = document.createElementNS(NS, 'rect');
+        rect.setAttribute('x', c*40);
+        rect.setAttribute('y', r*40);
+        rect.setAttribute('width', size);
+        rect.setAttribute('height', size);
+        rect.setAttribute('rx', 2);
+        var cls = 'cell' + (pattern[r][c] ? ' on ' + rowClass[r] : '');
+        rect.setAttribute('class', cls.trim());
+        g.appendChild(rect);
+      }
+    }
+    // Decorative mix bars
+    document.querySelectorAll('.mix-bars').forEach(function(el, n){
+      for(var i=0; i<28; i++){
+        var b = document.createElement('i');
+        var h = 20 + Math.abs(Math.sin((i+1)*(n+2)*0.7)) * 80;
+        b.style.height = h + '%';
+        el.appendChild(b);
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
